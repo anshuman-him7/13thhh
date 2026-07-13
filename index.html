@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>I Love You Kikuu ❤️</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(#09111f,#2b1148);color:#fff;overflow:hidden}
+#stars{position:fixed;inset:0}.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;animation:t 2s infinite alternate}@keyframes t{to{opacity:.3;transform:scale(2)}}
+#welcome,#main{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:20px;text-align:center}
+#main{display:none;overflow:auto}
+.heart{font-size:90px;cursor:pointer;animation:b 1.2s infinite}@keyframes b{50%{transform:scale(1.15)}}
+.card{background:rgba(255,255,255,.08);padding:20px;border-radius:18px;max-width:700px;margin:18px 0}
+.float{position:fixed;bottom:-20px;animation:u 8s linear forwards}@keyframes u{to{transform:translateY(-120vh);opacity:0}}
+button{padding:12px 28px;border:none;border-radius:30px;background:#ff4d88;color:#fff;cursor:pointer}
+</style></head><body>
+<div id="stars"></div>
+<section id="welcome"><div class="heart" onclick="openSite()">❤️</div><p>Tap the Heart</p></section>
+<section id="main">
+<h1>I Love You Kikuu ❤️</h1>
+<div class="card"><h2>Time Since We Met</h2><div id="count"></div></div>
+<div class="card"><h2>Letter</h2><p id="letter"></p></div>
+<div class="card"><h2>Will You Stay With Me Forever?</h2><button onclick="answer.textContent='Forever ❤️'">Forever ❤️</button><p id="answer"></p></div>
+</section>
+<script>
+for(let i=0;i<150;i++){let s=document.createElement('div');s.className='star';s.style.left=Math.random()*100+'vw';s.style.top=Math.random()*100+'vh';stars.appendChild(s);}
+const meet=new Date("2025-01-01");
+const msg=`Dear Kikuu,\n\nEvery day with you is special.\nThank you for making my life brighter.\nI Love You Forever ❤️`;
+function openSite(){welcome.style.display='none';main.style.display='flex';type();setInterval(fh,350);}
+function fh(){let h=document.createElement('div');h.className='float';h.textContent='💖';h.style.left=Math.random()*100+'vw';document.body.appendChild(h);setTimeout(()=>h.remove(),8000);}
+setInterval(()=>{let d=Date.now()-meet;let days=Math.floor(d/86400000);let hrs=Math.floor(d%86400000/3600000);let mins=Math.floor(d%3600000/60000);let secs=Math.floor(d%60000/1000);count.innerHTML=`${days} Days<br>${hrs} Hours ${mins} Minutes ${secs} Seconds`;},1000);
+let i=0;function type(){if(i<msg.length){letter.textContent+=msg[i++];setTimeout(type,35);}}
+</script></body></html>
